@@ -1,4 +1,4 @@
-# MazeBot_Projet - Navigation labyrinthe avec CoppeliaSim
+# MazeBot_Projet - Navigation du Robot dans le labyrinthe de maniere autonome avec CoppeliaSim
 
 # MazeBot_Projet
 
@@ -10,12 +10,12 @@ L'algorithme de navigation implémenté est le **Wall-Following** (longe le mur 
 
 ## Membres du groupe
 
-| Nom                | Rôle                               |
-| ------------------ | ---------------------------------- |
-| Jean Lesly JOCELYN | Développement complet du code      |
-| ------------------ | Développement complet / Navigation |
-| ------------------ | Développement complet / Navigation |
-| ------------------ | Développement complet / Navigation |
+| Nom                | Rôle                                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Jean Lesly JOCELYN | Développeur principal - Algorithmes de navigation (Wall-Following), mémoire spatiale, anti-répétition         |
+| [Nom Membre 2]     | Développeur assistant - Implémentation des capteurs, commande des moteurs, tests unitaires                    |
+| [Nom Membre 3]     | Intégrateur 3D - Construction du labyrinthe, configuration des marqueurs (départ/arrivée), réglages physiques |
+| [Nom Membre 4]     | Responsable documentation - Rédaction du README, captures d'écran, vidéo de démonstration                     |
 
 ## Lien GitHub
 
@@ -23,11 +23,65 @@ L'algorithme de navigation implémenté est le **Wall-Following** (longe le mur 
 
 ## Capture / Vidéo de la simulation
 
+### Vidéo de démonstration
+
 ![MazeBot - Navigation autonome dans un labyrinthe 3D](videos/MazeBot_Simulation.mp4)
 
 Vidéo montrant le robot Pioneer P3DX naviguant de l'entrée à la sortie du labyrinthe avec l'algorithme Wall-Following
 
 [Télécharger la vidéo](videos/MazeBot_Simulation.mp4) (cliquez pour visionner)
+
+### Captures d'écran
+
+#### 1. Vue générale de la scène
+
+![Point de départ](images/Depart.png)
+_Point de départ du robot avec le tableau UI (temps: 5.40s, distance: 3.78m)_
+
+![Zone d'arrivée](images/Arrivee.png)
+_Zone d'arrivée du robot_
+
+---
+
+#### 2. Navigation et détection d'obstacles
+
+![Détection obstacle en coin](images/Detection_Obstacle_Parallel_au_coin.png)
+_Détection d'un obstacle en approche d'un coin_
+
+![Contournement d'obstacle](images/Detournement_D_obstacle.png)
+_Le robot contourne un obstacle_
+
+![Avancement avec détection](images/Avancement_Detection_Obstacle_DD.png)
+_Robot en progression avec tableau UI (temps: 9.66s, distance: 3.01m)_
+
+![Avancer autre chemin](images/Avancer_Autre_chemin.png)
+_Choix d'un autre chemin à une intersection_
+
+---
+
+#### 3. Gestion des obstacles et coins
+
+![Obstacle en coin](images/Obstacle_Coin.png)
+_Gestion d'un obstacle en coin_
+
+![Détection autre chemin](images/Detection_Autre_Chemin.png)
+_Détection d'une autre direction possible_
+
+![Sortie obstacle coin](images/Sortie_Dans_Obstacle_Coin.png)
+_Sortie après avoir contourné un obstacle en coin_
+
+---
+
+#### 4. Autres comportements
+
+![Demi-tour](images/Demi_Tour.png)
+_Manoeuvre de demi-tour en impasse_
+
+![Autre détection](images/Detection_Autre_Obstacle.png)
+_Détection d'obstacle supplémentaire_
+
+![Suppression lignes rouges](images/Supression_lignes_rouge_apres_arrivee.png)
+_Nettoyage de la trajectoire après arrivée_
 
 ## Composants / Modèles 3D utilisés
 
@@ -47,13 +101,19 @@ Vidéo montrant le robot Pioneer P3DX naviguant de l'entrée à la sortie du lab
 
 | Tâche                                             | Responsable        |
 | ------------------------------------------------- | ------------------ |
-| Architecture générale du code                     | ------------------ |
-| Construction de la scene                          | ------------------ |
-| Algorithme de suivi de mur (Wall-Following)       | Jean Lesly JOCELYN |
-| Système de mémoire spatiale et zones              | Jean Lesly JOCELYN |
+| Conception et architecture du projet              | Jean Lesly JOCELYN |
+| Construction de la scène 3D (labyrinthe, murs)    | [Nom Membre 3]     |
+| Configuration des marqueurs (départ/arrivée)      | [Nom Membre 3]     |
+| Implémentation de l'algorithme Wall-Following     | Jean Lesly JOCELYN |
+| Implémentation du système de mémoire spatiale     | Jean Lesly JOCELYN |
 | Détection et correction des trajectoires répétées | Jean Lesly JOCELYN |
-| Tests et réglages des paramètres                  | ------------------ |
-| Documentation (README)                            | ------------------ |
+| Intégration des capteurs ultrasoniques            | [Nom Membre 2]     |
+| Commande des moteurs et asservissement            | [Nom Membre 2]     |
+| Tests, débogage et validation                     | [Nom Membre 3]     |
+| Réglages des paramètres (vitesse, distances)      | [Nom Membre 2]     |
+| Rédaction du README                               | [Nom Membre 4]     |
+| Captures d'écran et vidéo de démonstration        | [Nom Membre 4]     |
+| Documentation technique du projet                 | Jean Lesly JOCELYN |
 
 ## Tests réalisés
 
@@ -66,6 +126,19 @@ Vidéo montrant le robot Pioneer P3DX naviguant de l'entrée à la sortie du lab
 | Arrivée à destination | S'arrête quand distance < 0.40m                   | Validé                            |
 | Affichage tableau UI  | Mise à jour temps/distance/zone                   | Validé                            |
 | Trajectoire rouge     | Tracé continu du parcours                         | Validé                            |
+
+## Améliorations possibles
+
+1. Augmentation de la vitesse du robot.
+2. Demi-tour beaucoup plus fluide quand le robot rencontre un obstacle qui l'empeche d'avancer.
+
+## Difficultés rencontrées
+
+1. **Effondrement des murs** : Au lancement, les cuboïdes s'effondraient à cause des paramètres physiques par défaut. Solution : augmenter la masse des murs et activer le paramètre "Body is respondable" dans les propriétés de CoppeliaSim.
+
+2. **Répétition en boucle** : Le robot tournait en rond dans certains chemins. Correction via un système de mémoire spatiale qui détecte les zones déjà visitées et force un changement de stratégie (alternance suivi gauche/droit).
+
+3. **Blocage contre un mur (cas rare)** : Parfois, le robot reste coincé face à un mur et continue d'avancer sans reculer. Une correction a été apportée (seuil de sécurité à 0,15 m + recul automatique), mais le problème peut encore survenir occasionnellement dans des configurations très serrées. Une amélioration future serait d'ajouter un timer de détection de non-progression pour forcer un recul systématique.
 
 ## Installation
 
