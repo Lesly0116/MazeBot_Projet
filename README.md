@@ -14,7 +14,7 @@ L'algorithme de navigation implémenté est le **Wall-Following** (longe le mur 
 | ------------------ | ------------------------------------------------------------------------------------------------------------- |
 | Jean Lesly JOCELYN | Développeur principal - Algorithmes de navigation (Wall-Following), mémoire spatiale, anti-répétition         |
 | [Nom Membre 2]     | Développeur assistant - Implémentation des capteurs, commande des moteurs, tests unitaires                    |
-| [Nom Membre 3]     | Intégrateur 3D - Construction du labyrinthe, configuration des marqueurs (départ/arrivée), réglages physiques |
+| Schnaider Marc    | Intégrateur 3D - Construction du labyrinthe, configuration des marqueurs (départ/arrivée), réglages physiques |
 | [Nom Membre 4]     | Responsable documentation - Rédaction du README, captures d'écran, vidéo de démonstration                     |
 
 ## Lien GitHub
@@ -102,14 +102,14 @@ _Nettoyage de la trajectoire après arrivée_
 | Tâche                                             | Responsable        |
 | ------------------------------------------------- | ------------------ |
 | Conception et architecture du projet              | Jean Lesly JOCELYN |
-| Construction de la scène 3D (labyrinthe, murs)    | [Nom Membre 3]     |
-| Configuration des marqueurs (départ/arrivée)      | [Nom Membre 3]     |
+| Construction de la scène 3D (labyrinthe, murs)    |  Schnaider Marc     |
+| Configuration des marqueurs (départ/arrivée)      |  Schnaider Marc  |
 | Implémentation de l'algorithme Wall-Following     | Jean Lesly JOCELYN |
 | Implémentation du système de mémoire spatiale     | Jean Lesly JOCELYN |
 | Détection et correction des trajectoires répétées | Jean Lesly JOCELYN |
 | Intégration des capteurs ultrasoniques            | [Nom Membre 2]     |
 | Commande des moteurs et asservissement            | [Nom Membre 2]     |
-| Tests, débogage et validation                     | [Nom Membre 3]     |
+| Tests, débogage et validation                     |  Schnaider Marc |
 | Réglages des paramètres (vitesse, distances)      | [Nom Membre 2]     |
 | Rédaction du README                               | [Nom Membre 4]     |
 | Captures d'écran et vidéo de démonstration        | [Nom Membre 4]     |
