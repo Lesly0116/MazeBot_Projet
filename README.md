@@ -13,9 +13,9 @@ L'algorithme de navigation implémenté est le **Wall-Following** (longe le mur 
 | Nom                | Rôle                                                                                                          |
 | ------------------ | ------------------------------------------------------------------------------------------------------------- |
 | Jean Lesly JOCELYN | Développeur principal - Algorithmes de navigation (Wall-Following), mémoire spatiale, anti-répétition         |
-| [Nom Membre 2]     | Développeur assistant - Implémentation des capteurs, commande des moteurs, tests unitaires                    |
-| [Nom Membre 3]     | Intégrateur 3D - Construction du labyrinthe, configuration des marqueurs (départ/arrivée), réglages physiques |
-| [Nom Membre 4]     | Responsable documentation - Rédaction du README, captures d'écran, vidéo de démonstration                     |
+| Schnaider Marc     | Développeur assistant - Implémentation des capteurs, commande des moteurs, tests unitaires                    |
+| Amilca Pierre Anse | Intégrateur 3D - Construction du labyrinthe, configuration des marqueurs (départ/arrivée), réglages physiques |
+| Jean Lesly JOCELYN | Responsable documentation - Rédaction du README, captures d'écran, vidéo de démonstration                     |
 
 ## Lien GitHub
 
@@ -102,17 +102,17 @@ _Nettoyage de la trajectoire après arrivée_
 | Tâche                                             | Responsable        |
 | ------------------------------------------------- | ------------------ |
 | Conception et architecture du projet              | Jean Lesly JOCELYN |
-| Construction de la scène 3D (labyrinthe, murs)    | [Nom Membre 3]     |
-| Configuration des marqueurs (départ/arrivée)      | [Nom Membre 3]     |
+| Construction de la scène 3D (labyrinthe, murs)    | Amilca Pierre Anse |
+| Configuration des marqueurs (départ/arrivée)      | Amilca Pierre Anse |
 | Implémentation de l'algorithme Wall-Following     | Jean Lesly JOCELYN |
 | Implémentation du système de mémoire spatiale     | Jean Lesly JOCELYN |
 | Détection et correction des trajectoires répétées | Jean Lesly JOCELYN |
-| Intégration des capteurs ultrasoniques            | [Nom Membre 2]     |
-| Commande des moteurs et asservissement            | [Nom Membre 2]     |
-| Tests, débogage et validation                     | [Nom Membre 3]     |
-| Réglages des paramètres (vitesse, distances)      | [Nom Membre 2]     |
-| Rédaction du README                               | [Nom Membre 4]     |
-| Captures d'écran et vidéo de démonstration        | [Nom Membre 4]     |
+| Intégration des capteurs ultrasoniques            | Schnaider Marc     |
+| Commande des moteurs et asservissement            | Schnaider Marc     |
+| Tests, débogage et validation                     | Amilca Pierre Anse |
+| Réglages des paramètres (vitesse, distances)      | Schnaider Marc     |
+| Rédaction du README                               | Jean Lesly JOCELYN |
+| Captures d'écran et vidéo de démonstration        | Jean Lesly JOCELYN |
 | Documentation technique du projet                 | Jean Lesly JOCELYN |
 
 ## Tests réalisés
